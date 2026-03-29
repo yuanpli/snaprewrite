@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SnapRewrite FAQ (English)</title>
+  <meta name="description" content="SnapRewrite English FAQ: permissions, privacy, models, billing, and review links." />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(255,255,255,0.06);
+      --line: rgba(174,208,255,0.25);
+      --text: #e8f0ff;
+      --muted: #9bb1d1;
+      --brand: #7de7ff;
+      --brand2: #8ab7ff;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      color: var(--text);
+      font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(1000px 500px at 10% -10%, #163869 0%, transparent 62%),
+        radial-gradient(900px 520px at 100% 0%, #15314e 0%, transparent 60%),
+        linear-gradient(180deg, #040914 0%, #07111f 48%, #081426 100%);
+    }
+    .lang-switch {
+      position: fixed;
+      left: 16px;
+      top: 16px;
+      z-index: 20;
+      display: inline-flex;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(5, 13, 26, 0.72);
+      backdrop-filter: blur(10px);
+    }
+    .lang-switch a {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #cfe5ff;
+    }
+    .lang-switch a.active {
+      color: #03253a;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    .wrap {
+      width: min(980px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 96px 0 56px;
+    }
+    .hero, details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+    }
+    .hero { padding: 24px; }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4.8vw, 46px);
+      line-height: 1.12;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .top-links {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .top-links a {
+      text-decoration: none;
+      color: #d8efff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 14px;
+      background: rgba(9, 24, 45, 0.6);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .faq-list {
+      margin-top: 14px;
+      display: grid;
+      gap: 12px;
+    }
+    details {
+      padding: 12px 14px;
+      transition: border-color .2s ease;
+    }
+    details[open] {
+      border-color: rgba(140, 213, 255, 0.55);
+      background: rgba(13, 34, 62, 0.74);
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      position: relative;
+      padding-right: 24px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #95dfff;
+      font-size: 20px;
+    }
+    details[open] summary::after { content: "−"; }
+    .answer {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .answer code {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: #ccecff;
+      border: 1px solid rgba(141, 192, 245, 0.35);
+      border-radius: 6px;
+      padding: 1px 5px;
+      background: rgba(65, 120, 191, 0.18);
+    }
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: #84a1c5;
+      font-size: 12px;
+    }
+    @media (max-width: 700px) {
+      .wrap { padding-top: 84px; }
+      .lang-switch { left: 10px; top: 10px; }
+      .hero { padding: 16px; }
+      .top-links a { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="lang-switch" aria-label="Language switch">
+    <a href="faq-zh.html">中文</a>
+    <a class="active" href="faq-en.html">EN</a>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>SnapRewrite FAQ (English)</h1>
+      <p>This page clarifies permissions, privacy behavior, provider setup, billing flow, and legal links for users and App Store reviewers.</p>
+      <div class="top-links">
+        <a href="index.html">Back to Home</a>
+        <a href="privacy-policy-en.html">Privacy Policy (EN)</a>
+        <a href="terms-of-service-en.html">Terms of Service (EN)</a>
+      </div>
+    </section>
+
+    <section class="faq-list">
+      <details open>
+        <summary>1) How do I trigger rewriting in SnapRewrite?</summary>
+        <div class="answer">SnapRewrite supports three triggers: drag selection, double-click selection, and custom hotkey trigger. You can enable or disable each trigger in Settings based on your writing workflow.</div>
+      </details>
+
+      <details>
+        <summary>2) Why is Accessibility permission required?</summary>
+        <div class="answer">Accessibility permission is required by macOS so the app can detect selected text in other apps and provide in-place replacement. Without this permission, the main cross-app rewriting flow cannot run.</div>
+      </details>
+
+      <details>
+        <summary>3) Does SnapRewrite read all my documents?</summary>
+        <div class="answer">No. SnapRewrite only processes the text you actively select and explicitly trigger. It does not automatically scan full documents or batch-upload local files in the background.</div>
+      </details>
+
+      <details>
+        <summary>4) Where is selected text sent?</summary>
+        <div class="answer">Selected text is sent to the AI provider you configured (for example, OpenAI-compatible endpoints or Zhipu) to generate rewritten output. Data handling policies are defined by each provider you choose.</div>
+      </details>
+
+      <details>
+        <summary>5) Where are API keys stored?</summary>
+        <div class="answer">User-provided API keys are stored in local macOS Keychain rather than plain text app preferences. You can rotate or clear keys in Settings at any time.</div>
+      </details>
+
+      <details>
+        <summary>6) What is the difference between Free and Pro?</summary>
+        <div class="answer">Free includes a daily quota limit. Pro unlocks a broader feature set (such as expanded model/custom capabilities, depending on the current version) and is activated via Apple in-app purchase.</div>
+      </details>
+
+      <details>
+        <summary>7) How do I restore Pro on a new Mac?</summary>
+        <div class="answer">Use the in-app Restore Purchases action. Apple StoreKit will sync entitlement for the Apple ID used during the original purchase.</div>
+      </details>
+
+      <details>
+        <summary>8) Why can clipboard probing happen in some apps?</summary>
+        <div class="answer">Some non-standard text controls do not reliably expose selection APIs. In those cases, SnapRewrite may briefly probe copy results in trigger context and then restore clipboard text to minimize workflow disruption.</div>
+      </details>
+
+    </section>
+
+    <footer>SnapRewrite FAQ (English) • Last Updated: March 29, 2026</footer>
+  </main>
+</body>
+</html>

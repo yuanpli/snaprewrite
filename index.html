@@ -345,7 +345,7 @@
     .legal-links {
       display: grid;
       gap: 10px;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       margin-top: 12px;
     }
 
@@ -426,6 +426,7 @@
         <div class="cta-row">
           <a class="btn primary" href="#legal" data-i18n="ctaLegal">查看协议链接</a>
           <a class="btn ghost" href="#features" data-i18n="ctaFeatures">浏览核心功能</a>
+          <a class="btn ghost" id="faqLinkTop" href="faq-zh.html" data-i18n="ctaFaq">查看 FAQ</a>
         </div>
         <div class="metrics">
           <div class="metric">
@@ -539,6 +540,10 @@
           <span data-i18n="termsLinkTitle">服务条款</span>
           <small data-i18n="termsLinkSub">Terms of Service</small>
         </a>
+        <a class="legal-link" id="faqLink" href="faq-zh.html">
+          <span data-i18n="faqLinkTitle">常见问题</span>
+          <small data-i18n="faqLinkSub">FAQ（中文 / EN）</small>
+        </a>
       </div>
     </section>
 
@@ -555,6 +560,7 @@
         heroLead: "SnapRewrite 在你现有工作流里直接改写文本，不用来回切网页。拖选、双击或快捷键触发，几秒得到可直接替换的结果。",
         ctaLegal: "查看协议链接",
         ctaFeatures: "浏览核心功能",
+        ctaFaq: "查看 FAQ",
         metric1: "免费每日额度（当前配置）",
         metric2v: "多模型",
         metric2: "支持多个 AI 服务商切换",
@@ -594,6 +600,8 @@
         privacyLinkSub: "Privacy Policy",
         termsLinkTitle: "服务条款",
         termsLinkSub: "Terms of Service",
+        faqLinkTitle: "常见问题",
+        faqLinkSub: "FAQ（中文 / EN）",
         footer: "SnapRewrite 官方网站 • 最后更新：2026-03-29"
       },
       en: {
@@ -602,6 +610,7 @@
         heroLead: "SnapRewrite upgrades text directly in your current workflow. No tab switching. Trigger via drag, double-click, or hotkey and apply polished output in seconds.",
         ctaLegal: "Open Legal Pages",
         ctaFeatures: "Explore Features",
+        ctaFaq: "Read FAQ",
         metric1: "Free daily quota (current config)",
         metric2v: "Multi-Provider",
         metric2: "Switch between AI providers as needed",
@@ -641,6 +650,8 @@
         privacyLinkSub: "Chinese & English versions available",
         termsLinkTitle: "Terms of Service",
         termsLinkSub: "Chinese & English versions available",
+        faqLinkTitle: "FAQ",
+        faqLinkSub: "Separate Chinese & English pages",
         footer: "SnapRewrite Official Website • Last Updated: March 29, 2026"
       }
     };
@@ -656,6 +667,8 @@
     const terminalText = document.getElementById("terminalText");
     const privacyLink = document.getElementById("privacyLink");
     const termsLink = document.getElementById("termsLink");
+    const faqLink = document.getElementById("faqLink");
+    const faqLinkTop = document.getElementById("faqLinkTop");
 
     function setLang(lang) {
       const dict = i18n[lang];
@@ -670,9 +683,13 @@
       if (lang === "zh") {
         privacyLink.href = "privacy-policy-zh.html";
         termsLink.href = "terms-of-service-zh.html";
+        faqLink.href = "faq-zh.html";
+        faqLinkTop.href = "faq-zh.html";
       } else {
         privacyLink.href = "privacy-policy-en.html";
         termsLink.href = "terms-of-service-en.html";
+        faqLink.href = "faq-en.html";
+        faqLinkTop.href = "faq-en.html";
       }
       btnZh.classList.toggle("active", lang === "zh");
       btnEn.classList.toggle("active", lang === "en");

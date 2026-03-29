@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SnapRewrite FAQ（中文）</title>
+  <meta name="description" content="SnapRewrite 中文 FAQ：权限、隐私、模型、计费与上架链接说明。" />
+  <style>
+    :root {
+      --bg: #07111f;
+      --panel: rgba(255,255,255,0.06);
+      --line: rgba(174,208,255,0.25);
+      --text: #e8f0ff;
+      --muted: #9bb1d1;
+      --brand: #7de7ff;
+      --brand2: #8ab7ff;
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      color: var(--text);
+      font-family: "SF Pro Display", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+      background:
+        radial-gradient(1000px 500px at 10% -10%, #163869 0%, transparent 62%),
+        radial-gradient(900px 520px at 100% 0%, #15314e 0%, transparent 60%),
+        linear-gradient(180deg, #040914 0%, #07111f 48%, #081426 100%);
+    }
+    .lang-switch {
+      position: fixed;
+      left: 16px;
+      top: 16px;
+      z-index: 20;
+      display: inline-flex;
+      gap: 8px;
+      padding: 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(5, 13, 26, 0.72);
+      backdrop-filter: blur(10px);
+    }
+    .lang-switch a {
+      text-decoration: none;
+      border-radius: 999px;
+      padding: 7px 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: #cfe5ff;
+    }
+    .lang-switch a.active {
+      color: #03253a;
+      background: linear-gradient(135deg, var(--brand), var(--brand2));
+    }
+    .wrap {
+      width: min(980px, calc(100% - 24px));
+      margin: 0 auto;
+      padding: 96px 0 56px;
+    }
+    .hero, details {
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--panel);
+      backdrop-filter: blur(8px);
+    }
+    .hero { padding: 24px; }
+    .hero h1 {
+      margin: 0 0 8px;
+      font-size: clamp(30px, 4.8vw, 46px);
+      line-height: 1.12;
+    }
+    .hero p {
+      margin: 0;
+      color: var(--muted);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+    .top-links {
+      margin-top: 14px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .top-links a {
+      text-decoration: none;
+      color: #d8efff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 10px 14px;
+      background: rgba(9, 24, 45, 0.6);
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .faq-list {
+      margin-top: 14px;
+      display: grid;
+      gap: 12px;
+    }
+    details {
+      padding: 12px 14px;
+      transition: border-color .2s ease;
+    }
+    details[open] {
+      border-color: rgba(140, 213, 255, 0.55);
+      background: rgba(13, 34, 62, 0.74);
+    }
+    summary {
+      cursor: pointer;
+      list-style: none;
+      font-size: 16px;
+      font-weight: 700;
+      line-height: 1.5;
+      position: relative;
+      padding-right: 24px;
+    }
+    summary::-webkit-details-marker { display: none; }
+    summary::after {
+      content: "+";
+      position: absolute;
+      right: 0;
+      top: 0;
+      color: #95dfff;
+      font-size: 20px;
+    }
+    details[open] summary::after { content: "−"; }
+    .answer {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.75;
+    }
+    .answer code {
+      font-family: "SF Mono", Menlo, Consolas, monospace;
+      font-size: 13px;
+      color: #ccecff;
+      border: 1px solid rgba(141, 192, 245, 0.35);
+      border-radius: 6px;
+      padding: 1px 5px;
+      background: rgba(65, 120, 191, 0.18);
+    }
+    footer {
+      margin-top: 18px;
+      text-align: center;
+      color: #84a1c5;
+      font-size: 12px;
+    }
+    @media (max-width: 700px) {
+      .wrap { padding-top: 84px; }
+      .lang-switch { left: 10px; top: 10px; }
+      .hero { padding: 16px; }
+      .top-links a { width: 100%; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+  <nav class="lang-switch" aria-label="Language switch">
+    <a class="active" href="faq-zh.html">中文</a>
+    <a href="faq-en.html">EN</a>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>SnapRewrite 常见问题（中文）</h1>
+      <p>这里整理了权限申请、隐私处理、模型配置、内购和网页链接配置等高频问题，便于用户与审核人员快速确认产品行为。</p>
+      <div class="top-links">
+        <a href="index.html">返回官网首页</a>
+        <a href="privacy-policy-zh.html">隐私协议（中文）</a>
+        <a href="terms-of-service-zh.html">服务条款（中文）</a>
+      </div>
+    </section>
+
+    <section class="faq-list">
+      <details open>
+        <summary>1) SnapRewrite 具体怎么触发改写？</summary>
+        <div class="answer">支持三种触发方式：拖选文本后触发、双击词语触发、以及快捷键触发。你可以在设置里单独开启或关闭每一种方式。触发后会弹出操作面板，你可以选择“改写”或“自定义命令”。</div>
+      </details>
+
+      <details>
+        <summary>2) 为什么必须申请“辅助功能（Accessibility）”权限？</summary>
+        <div class="answer">因为应用需要在其他 App 内识别“当前选中的文本”并实现“原位替换”，这属于系统受控能力。没有该权限时，SnapRewrite 无法感知外部应用中的选区，也就无法完成主流程。</div>
+      </details>
+
+      <details>
+        <summary>3) 会读取我所有内容吗？会上传本地文档吗？</summary>
+        <div class="answer">不会。SnapRewrite 只在你主动触发时处理“当前选中的文本片段”。不会自动扫描整篇文档，也不会后台批量上传文件。配置与偏好设置主要保存在本地设备中。</div>
+      </details>
+
+      <details>
+        <summary>4) 文本会被发送到哪里？</summary>
+        <div class="answer">文本会发送到你在应用中选择的 AI 服务商接口（如 OpenAI 兼容接口、智谱等）进行改写处理。不同服务商的数据处理和保留策略不同，请同时查阅对应服务商条款。</div>
+      </details>
+
+      <details>
+        <summary>5) API Key 存储在哪里，安全吗？</summary>
+        <div class="answer">用户填写的 API Key 存储在 macOS Keychain（钥匙串）中，而不是明文写在普通配置文件中。你可随时在设置中替换或清空密钥。若设备本身遭到入侵，任何本地数据都有风险，建议配合系统级安全策略使用。</div>
+      </details>
+
+      <details>
+        <summary>6) 免费版和 Pro 的区别是什么？</summary>
+        <div class="answer">免费版有每日额度限制；Pro 解锁后可使用更完整能力（如更多模型/高级自定义能力，具体以当前版本功能为准）。Pro 通过 Apple 内购解锁，权益与 Apple ID 绑定。</div>
+      </details>
+
+      <details>
+        <summary>7) 我换了 Mac，如何恢复 Pro？</summary>
+        <div class="answer">在应用中使用“恢复购买”即可通过 Apple StoreKit 同步当前 Apple ID 的购买状态。请确认登录的是购买时使用的同一 Apple ID。</div>
+      </details>
+
+      <details>
+        <summary>8) 为什么有时会读取剪贴板？</summary>
+        <div class="answer">在部分非标准文本控件中，系统选区接口不稳定。SnapRewrite 会在触发场景下短暂探测复制结果来识别选中内容，并尽量恢复原始剪贴板文本，以减少对用户工作流影响。</div>
+      </details>
+
+    </section>
+
+    <footer>SnapRewrite FAQ（中文） • 最后更新：2026-03-29</footer>
+  </main>
+</body>
+</html>
