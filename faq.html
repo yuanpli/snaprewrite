@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SnapRewrite FAQ</title>
+  <meta name="description" content="Redirecting to language-specific FAQ page." />
+</head>
+<body>
+  <script>
+    const lang = (localStorage.getItem("snaprewrite.site.lang")
+      || (navigator.language || "")).toLowerCase();
+    const target = lang.startsWith("zh") ? "faq-zh.html" : "faq-en.html";
+    location.replace(target);
+  </script>
+  <p>Redirecting to FAQ...</p>
+</body>
+</html>
