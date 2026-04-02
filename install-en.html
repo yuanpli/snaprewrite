@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SnapRewrite Installation Guide (English)</title>
+  <meta name="description" content="SnapRewrite trial installation guide: Gatekeeper allowlisting, Accessibility permission, and Keychain prompt explanation." />
+  <style>
+    :root{
+      --cream:#f5f0e8;--cream2:#ede7d9;
+      --ink:#1a1510;--ink2:#3d3528;--muted:#7a6e5f;
+      --gold:#c8923a;--line:rgba(26,21,16,.13);--lines:rgba(26,21,16,.22)
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif}
+    .lang-switch{position:fixed;left:16px;top:16px;z-index:20;display:inline-flex;gap:8px;padding:8px;border:1px solid var(--lines);border-radius:999px;background:rgba(245,240,232,.92);backdrop-filter:blur(8px)}
+    .lang-switch a{text-decoration:none;border-radius:999px;padding:7px 12px;font-size:13px;font-weight:700;color:var(--muted);font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+    .lang-switch a.active{color:var(--cream);background:var(--ink)}
+    .wrap{width:min(980px,calc(100% - 24px));margin:0 auto;padding:96px 0 56px}
+    .hero,.card{border:1px solid var(--lines);border-radius:14px;background:#fff}
+    .hero{padding:24px}
+    .hero h1{font-size:clamp(32px,5vw,46px);line-height:1.12;margin-bottom:8px;font-weight:400}
+    .hero p{font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink2);font-size:15px;line-height:1.75}
+    .top-links{margin-top:14px;display:flex;flex-wrap:wrap;gap:10px}
+    .top-links a{text-decoration:none;color:var(--ink);border:1px solid var(--lines);border-radius:8px;padding:10px 14px;background:var(--cream);font-weight:700;font-size:14px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+    .grid{margin-top:14px;display:grid;gap:12px}
+    .card{padding:18px 18px 16px}
+    .card h2{font-size:22px;font-weight:400;margin-bottom:8px}
+    .card ol,.card ul{padding-left:1.25em}
+    .card li{margin:7px 0;font-family:-apple-system,BlinkMacSystemFont,sans-serif;color:var(--ink2);line-height:1.7;font-size:14px}
+    .emph{margin-top:10px;border:1px solid var(--lines);border-left:4px solid var(--gold);border-radius:8px;background:var(--cream2);padding:12px 14px;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;line-height:1.75;color:var(--ink2)}
+    .download{display:inline-flex;align-items:center;gap:8px;text-decoration:none;margin-top:10px;padding:11px 16px;border-radius:8px;background:var(--ink);color:var(--cream);font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;font-weight:700}
+    footer{margin-top:16px;text-align:center;color:var(--muted);font-size:12px;font-family:-apple-system,BlinkMacSystemFont,sans-serif}
+    @media (max-width:700px){
+      .wrap{padding-top:84px}
+      .hero{padding:16px}
+      .top-links a{width:100%;text-align:center}
+    }
+  </style>
+</head>
+<body>
+  <nav class="lang-switch" aria-label="Language switch">
+    <a href="install-zh.html">中文</a>
+    <a class="active" href="install-en.html">EN</a>
+  </nav>
+
+  <main class="wrap">
+    <section class="hero">
+      <h1>SnapRewrite Installation Guide (English)</h1>
+      <p>For the website trial package (.pkg). Includes Gatekeeper allowlisting, Accessibility permission setup, and first-time Keychain prompt guidance.</p>
+      <div class="top-links">
+        <a href="index.html">Back to Home</a>
+        <a href="faq-en.html">FAQ (English)</a>
+      </div>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <h2>1) Download and Install the Trial Build</h2>
+        <ol>
+          <li>Download: <a href="https://github.com/yuanpli/snaprewrite/releases/download/1.0.0/SnapRewrite-1.0.0-universal.pkg" target="_blank" rel="noopener noreferrer">SnapRewrite-1.0.0-universal.pkg</a></li>
+          <li>Double-click the package and finish the installer flow.</li>
+          <li>Default install path: <code>/Applications/SnapRewrite.app</code></li>
+        </ol>
+        <a class="download" href="https://github.com/yuanpli/snaprewrite/releases/download/1.0.0/SnapRewrite-1.0.0-universal.pkg" target="_blank" rel="noopener noreferrer">Download Trial Build</a>
+      </article>
+
+      <article class="card">
+        <h2>2) Allow Local Installation (Gatekeeper)</h2>
+        <ol>
+          <li>If macOS blocks launch, open <code>System Settings &gt; Privacy &amp; Security</code>.</li>
+          <li>Find the SnapRewrite blocked message and click “Open Anyway”.</li>
+          <li>Open the app again, or right-click in Finder and choose “Open”.</li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h2>3) Enable Accessibility Permission (Required)</h2>
+        <ol>
+          <li>Open SnapRewrite and go to <code>Settings &gt; General</code>.</li>
+          <li>Click “Grant Permission…” to jump to Accessibility settings.</li>
+          <li>Enable SnapRewrite and confirm the toggle.</li>
+          <li>Return to the app and confirm status shows “Permission granted”.</li>
+        </ol>
+      </article>
+
+      <article class="card">
+        <h2>4) First Keychain Prompt (Expected)</h2>
+        <div class="emph">
+          Important: this is not an error and not a risk warning about the app itself. It is a standard macOS security check.<br/>
+          SnapRewrite uses Keychain for sensitive values (such as API keys and trial-related secure values). On first access, macOS asks for your confirmation. After entering your login password, choosing “Always Allow” is recommended to reduce repeated prompts.
+        </div>
+      </article>
+    </section>
+
+    <footer>SnapRewrite Installation Guide (English)</footer>
+  </main>
+</body>
+</html>
+

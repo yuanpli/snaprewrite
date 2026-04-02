@@ -14,6 +14,8 @@
 }
 html{scroll-behavior:smooth}
 body{background:var(--cream);color:var(--ink);font-family:Georgia,'Times New Roman',serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+html[lang="en"] .zh-only{display:none!important}
+html[lang="zh-CN"] .en-only{display:none!important}
 #lang{display:flex;border:1px solid var(--lines);border-radius:3px;overflow:hidden;background:var(--cream);box-shadow:0 2px 10px rgba(26,21,16,.1);flex-shrink:0}
 #lang button{border:none;background:transparent;padding:7px 14px;cursor:pointer;font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--muted);transition:all .18s}
 #lang button.on{background:var(--ink);color:var(--cream)}
@@ -81,18 +83,18 @@ h2 em{font-style:italic;color:var(--gold)}
 .fstep:hover .fnum{color:var(--goldl)}
 h3{font-size:20px;letter-spacing:-.01em;font-weight:400;margin-bottom:9px;color:var(--ink)}
 .fdesc{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:14px;color:var(--muted);line-height:1.65}
-.feat-sec{padding:96px 0;background:var(--ink)}
-.feat-sec .sec-label{color:var(--faint)}
+.feat-sec{padding:96px 0;background:var(--cream)}
+.feat-sec .sec-label{color:var(--muted)}
 .feat-sec .sec-label::before{background:var(--gold)}
-.feat-sec h2{color:var(--cream)}
-.feat-sec .sec-body{color:rgba(245,240,232,.55)}
+.feat-sec h2{color:var(--ink)}
+.feat-sec .sec-body{color:var(--ink2)}
 .feat-hdr{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:end;margin-bottom:52px}
-.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.08);border-radius:5px;overflow:hidden}
-.fcard{background:var(--ink);padding:34px;transition:background .22s}
-.fcard:hover{background:#211d17}
-.ficon{width:42px;height:42px;border:1px solid rgba(255,255,255,.1);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px}
-.ftitle{font-size:19px;font-weight:400;color:var(--cream);letter-spacing:-.01em;margin-bottom:9px}
-.fdescw{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13.5px;color:rgba(245,240,232,.48);line-height:1.7}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--lines);border:1px solid var(--lines);border-radius:5px;overflow:hidden}
+.fcard{background:var(--cream);padding:34px;transition:background .22s}
+.fcard:hover{background:var(--goldp)}
+.ficon{width:42px;height:42px;border:1px solid var(--lines);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:18px}
+.ftitle{font-size:19px;font-weight:400;color:var(--ink);letter-spacing:-.01em;margin-bottom:9px}
+.fdescw{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13.5px;color:var(--muted);line-height:1.7}
 .price-sec{padding:96px 0;background:var(--cream2)}
 .price-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:52px}
 .pcard{border:1px solid var(--lines);border-radius:6px;padding:38px;background:var(--cream)}
@@ -134,6 +136,7 @@ h3{font-size:20px;letter-spacing:-.01em;font-weight:400;margin-bottom:9px;color:
 .faq-item{padding:22px;border:1px solid var(--lines);border-radius:5px;background:var(--cream)}
 .faq-q{font-size:18px;line-height:1.4;margin-bottom:8px;color:var(--ink)}
 .faq-a{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13.5px;color:var(--muted);line-height:1.7}
+.install-actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:10px}
 .support-card{margin-top:34px;padding:28px 30px;border:1px solid var(--lines);border-radius:5px;background:var(--cream);display:flex;align-items:center;justify-content:space-between;gap:20px}
 .support-title{font-size:24px;line-height:1.2}
 .support-text{font-family:-apple-system,BlinkMacSystemFont,sans-serif;font-size:13.5px;color:var(--muted);margin-top:6px}
@@ -175,7 +178,9 @@ footer{border-top:1px solid var(--line);padding:28px 40px;display:flex;align-ite
   </a>
   <div class="nav-right">
     <div class="nav-links">
-      <a class="nav-link" href="#flow" data-k="navFeat">Features</a>
+      <a class="nav-link" href="#features" data-k="navFeat">Features</a>
+      <a class="nav-link" href="#flow" data-k="navFlow">Flow</a>
+      <a class="nav-link" href="#install"><span class="zh-only">安装</span><span class="en-only">Install</span></a>
       <a class="nav-link" href="#pricing" data-k="navPrice">Pricing</a>
       <a class="nav-link" href="#faq" data-k="navFaq">FAQ</a>
       <a class="nav-link" href="#support" data-k="navSup">Support</a>
@@ -195,7 +200,8 @@ footer{border-top:1px solid var(--line);padding:28px 40px;display:flex;align-ite
       <h1><span data-k="h1a">选中文字，随心所欲。</span><br/><em data-k="h1b">从润色到聊天，皆可自定义。</em></h1>
       <p class="lead" data-k="lead">SnapRewrite 让改写、润色和翻译直接发生在你正在使用的应用里。不用切 Tab，不用复制粘贴——选中触发，结果秒回，一键落回原文。</p>
       <div class="actions">
-        <a href="https://apps.apple.com/app/id6761365370" class="btn-p" data-k="cta1" target="_blank" rel="noopener noreferrer">免费下载使用</a>
+        <a href="https://github.com/yuanpli/snaprewrite/releases/download/1.0.0/SnapRewrite-1.0.0-universal.pkg" class="btn-p" target="_blank" rel="noopener noreferrer"><span class="zh-only">下载体验版</span><span class="en-only">Download Trial Build</span></a>
+        <a href="install.html" class="btn-s"><span class="zh-only">安装说明</span><span class="en-only">Installation Guide</span></a>
         <a href="#flow" class="btn-s" data-k="cta2">了解功能</a>
       </div>
       <div class="stats">
@@ -227,6 +233,26 @@ footer{border-top:1px solid var(--line);padding:28px 40px;display:flex;align-ite
 </section>
 
 <div class="hdiv"></div>
+
+<section class="feat-sec" id="features">
+  <div class="wrap">
+    <div class="feat-hdr">
+      <div>
+        <div class="sec-label" data-k="kl">核心功能</div>
+        <h2 data-k="kh">让 AI 写作<br/><em>真正贴合你的场景</em></h2>
+      </div>
+      <p class="sec-body" data-k="kb">从邮件沟通到产品文档，从中英切换到语气调整，SnapRewrite 提供的是低摩擦效率体验，而不是额外学习成本。</p>
+    </div>
+    <div class="feat-grid">
+      <div class="fcard"><div class="ficon">&#9889;</div><div class="ftitle" data-k="f1h">快捷触发</div><p class="fdescw" data-k="f1p">拖选、双击、快捷键三种触发方式，完全匹配你的操作习惯。</p></div>
+      <div class="fcard"><div class="ficon">&#128279;</div><div class="ftitle" data-k="f2h">多模型接入</div><p class="fdescw" data-k="f2p">内置国产免费模型，支持 OpenAI-compatible 接口，BYOK 自由选择。</p></div>
+      <div class="fcard"><div class="ficon">&#127763;</div><div class="ftitle" data-k="f3h">自定义命令</div><p class="fdescw" data-k="f3p">将重复写作任务封装为可复用动作，打造专属写作工作流。</p></div>
+      <div class="fcard"><div class="ficon">&#127758;</div><div class="ftitle" data-k="f4h">输出语言控制</div><p class="fdescw" data-k="f4p">明确指定输出语言，避免中英混杂，内置语言校验与重试。</p></div>
+      <div class="fcard"><div class="ficon">&#128274;</div><div class="ftitle" data-k="f5h">隐私本地优先</div><p class="fdescw" data-k="f5p">配置与 API Key 保存在本机，仅在你触发时才向模型发起请求。</p></div>
+      <div class="fcard"><div class="ficon">&#127912;</div><div class="ftitle" data-k="f6h">外观可定制</div><p class="fdescw" data-k="f6p">工具栏、弹窗、Settings 三处主题色独立配置，越用越顺手。</p></div>
+    </div>
+  </div>
+</section>
 
 <section class="sec" id="flow">
   <div class="wrap">
@@ -262,22 +288,44 @@ footer{border-top:1px solid var(--line);padding:28px 40px;display:flex;align-ite
   </div>
 </section>
 
-<section class="feat-sec" id="features">
+<section class="sec" id="install">
   <div class="wrap">
-    <div class="feat-hdr">
-      <div>
-        <div class="sec-label" data-k="kl">核心功能</div>
-        <h2 data-k="kh">让 AI 写作<br/><em>真正贴合你的场景</em></h2>
+    <div class="sec-label"><span class="zh-only">安装</span><span class="en-only">Install</span></div>
+    <h2>
+      <span class="zh-only">体验版下载与<em>安装说明</em></span>
+      <span class="en-only">Trial Download &amp; <em>Installation Guide</em></span>
+    </h2>
+    <p class="sec-body">
+      <span class="zh-only">官网体验版可直接下载安装。首次使用请完成“本地安装放行（Gatekeeper）”和“辅助功能权限”配置，确保跨应用改写与替换正常工作。</span>
+      <span class="en-only">Download the website trial build directly. On first launch, complete Gatekeeper allowlisting and Accessibility permission setup for full cross-app rewrite and replacement.</span>
+    </p>
+    <div class="faq-grid" style="margin-top:28px">
+      <div class="faq-item">
+        <h3 class="faq-q"><span class="zh-only">体验版下载</span><span class="en-only">Trial Download</span></h3>
+        <p class="faq-a">
+          <span class="zh-only">下载地址：GitHub Releases（universal pkg）</span>
+          <span class="en-only">Source: GitHub Releases (universal pkg)</span>
+        </p>
+        <div class="install-actions">
+          <a class="btn-p" href="https://github.com/yuanpli/snaprewrite/releases/download/1.0.0/SnapRewrite-1.0.0-universal.pkg" target="_blank" rel="noopener noreferrer">
+            <span class="zh-only">下载 SnapRewrite-1.0.0-universal.pkg</span>
+            <span class="en-only">Download SnapRewrite-1.0.0-universal.pkg</span>
+          </a>
+        </div>
       </div>
-      <p class="sec-body" data-k="kb">从邮件沟通到产品文档，从中英切换到语气调整，SnapRewrite 提供的是低摩擦效率体验，而不是额外学习成本。</p>
-    </div>
-    <div class="feat-grid">
-      <div class="fcard"><div class="ficon">&#9889;</div><div class="ftitle" data-k="f1h">快捷触发</div><p class="fdescw" data-k="f1p">拖选、双击、快捷键三种触发方式，完全匹配你的操作习惯。</p></div>
-      <div class="fcard"><div class="ficon">&#128279;</div><div class="ftitle" data-k="f2h">多模型接入</div><p class="fdescw" data-k="f2p">内置国产免费模型，支持 OpenAI-compatible 接口，BYOK 自由选择。</p></div>
-      <div class="fcard"><div class="ficon">&#127763;</div><div class="ftitle" data-k="f3h">自定义命令</div><p class="fdescw" data-k="f3p">将重复写作任务封装为可复用动作，打造专属写作工作流。</p></div>
-      <div class="fcard"><div class="ficon">&#127758;</div><div class="ftitle" data-k="f4h">输出语言控制</div><p class="fdescw" data-k="f4p">明确指定输出语言，避免中英混杂，内置语言校验与重试。</p></div>
-      <div class="fcard"><div class="ficon">&#128274;</div><div class="ftitle" data-k="f5h">隐私本地优先</div><p class="fdescw" data-k="f5p">配置与 API Key 保存在本机，仅在你触发时才向模型发起请求。</p></div>
-      <div class="fcard"><div class="ficon">&#127912;</div><div class="ftitle" data-k="f6h">外观可定制</div><p class="fdescw" data-k="f6p">工具栏、弹窗、Settings 三处主题色独立配置，越用越顺手。</p></div>
+      <div class="faq-item">
+        <h3 class="faq-q"><span class="zh-only">安装说明</span><span class="en-only">Installation Instructions</span></h3>
+        <p class="faq-a">
+          <span class="zh-only">包含本地安装放行、辅助功能授权、Keychain 提示说明与常见问题排查。</span>
+          <span class="en-only">Includes Gatekeeper allowlisting, Accessibility setup, Keychain prompt notes, and troubleshooting.</span>
+        </p>
+        <div class="install-actions">
+          <a class="btn-s" href="install.html">
+            <span class="zh-only">查看安装说明</span>
+            <span class="en-only">Open Installation Guide</span>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -339,12 +387,18 @@ footer{border-top:1px solid var(--line);padding:28px 40px;display:flex;align-ite
       </div>
       <div class="faq-item">
         <h3 class="faq-q" data-k="fq3q">是否支持自定义模型？</h3>
-        <p class="faq-a" data-k="fq3a">支持。你可以在 Pro 版中接入任意 OpenAI-compatible 服务商。</p>
+        <p class="faq-a" data-k="fq3a">支持。当前可选模型包括：智谱（glm-4-flash）、OpenAI（gpt-4.1）、Groq（llama-3.3-70b-versatile）、Gemini（gemini-3-flash-preview）。</p>
       </div>
       <div class="faq-item">
         <h3 class="faq-q" data-k="fq4q">数据会上传到哪里？</h3>
         <p class="faq-a" data-k="fq4a">配置和密钥保存在本地，仅在你手动触发时向目标模型发送请求。</p>
       </div>
+    </div>
+    <div class="install-actions" style="margin-top:18px">
+      <a class="btn-s" href="faq.html">
+        <span class="zh-only">查看完整 FAQ</span>
+        <span class="en-only">View Full FAQ</span>
+      </a>
     </div>
   </div>
 </section>
@@ -388,9 +442,9 @@ footer{border-top:1px solid var(--line);padding:28px 40px;display:flex;align-ite
 <script>
 var D={
 zh:{
-badge:"macOS 菜单栏 · AI 写作助手",h1a:"选中文字，",h1b:"立刻变更好。",lead:"SnapRewrite 让改写、润色和翻译直接发生在你正在使用的应用里。不用切 Tab，不用复制粘贴——选中触发，结果秒回，一键落回原文。",cta1:"免费下载使用",cta2:"了解功能",s1:"应用体积",s2:"平均改写耗时",s3v:"一次性",s3:"Pro 解锁",tt:"SnapRewrite · 运行日志",tg1:"[检测]",tv1:"选中文本已捕获",tg2:"[动作]",tv2:"改写语气 · 专业风格",tg3:"[输出]",tv3:"2.1 秒完成 ✓",tg4:"[应用]",tv4:"原位替换完成",lbef:"改写前",tbef:"this report has some issues and we need fix it asap",laft:"改写后",taft:"本报告存在若干关键问题，需立即处理。",tag1:"改写润色",tag2:"中英翻译",tag3:"语法修复",tag4:"自定义命令",tag5:"多模型接入",sh:"向下探索",fl:"使用流程",fh:"3 秒完成一次<br/><em>高质量改写</em>",fb:"把复制粘贴等待再替换这 7 步变成 1 步。选中触发，结果直接落回原文，完全不打断你的工作节奏。",s1h:"选中文本",s1p:"在任意 macOS 应用里选中你想处理的文字。邮件、Slack、Notion、文档……都行。",s2h:"触发命令",s2p:"拖选后触发、双击触发、或使用自定义快捷键。三种方式，匹配不同习惯。",s3h:"生成结果",s3p:"选择写作风格或自定义命令，AI 结果秒回。切换风格即刻重新生成。",s4h:"一键应用",s4p:"点击 Apply，改写结果直接替换原文。继续你手头的工作，不换窗口。",kl:"核心功能",kh:"让 AI 写作<br/><em>真正贴合你的场景</em>",kb:"从邮件沟通到产品文档，从中英切换到语气调整，SnapRewrite 提供的是低摩擦效率体验，而不是额外学习成本。",f1h:"快捷触发",f1p:"拖选、双击、快捷键三种触发方式，完全匹配你的操作习惯。",f2h:"多模型接入",f2p:"内置国产免费模型，支持 OpenAI-compatible 接口，BYOK 自由选择。",f3h:"自定义命令",f3p:"将重复写作任务封装为可复用动作，打造专属写作工作流。",f4h:"输出语言控制",f4p:"明确指定输出语言，避免中英混杂，内置语言校验与重试。",f5h:"隐私本地优先",f5p:"配置与 API Key 保存在本机，仅在你触发时才向模型发起请求。",f6h:"外观可定制",f6p:"工具栏、弹窗、Settings 三处主题色独立配置，越用越顺手。",pl:"定价",ph:"先体验，<em>再决定。</em>",pb0:"免费",pn0:"永久免费，无需信用卡",pd0:"内置国产免费模型，免翻墙开箱即用。体验完整改写流程，确认真实需求再决定是否升级。",pi1:"内置免费模型 + 每日额度",pi2:"改写 / 润色 / 翻译核心功能",pi3:"自定义命令（最多 2 条）",pi4:"三种触发方式",pb0btn:"免费开始使用",pnow:"¥18",porig:"原价 ¥68",pdisc:"限时 74% OFF",pn1:"一次性买断 · 无订阅",pd1:"接入自己的模型与 API，解锁无限自定义命令，打造真正属于你的写作工作流。",pp1:"全部免费功能",pp2:"BYOK：接入任意 OpenAI-compatible 模型",pp3:"自定义命令不限数量",pp4:"HTTP / HTTPS 代理支持",pp5:"Apple 内购 · 可恢复购买",pp0btn:"解锁 Pro →",faql:"FAQ",faqh:"常见问题与<em>快速解答</em>",fq1q:"支持哪些应用？",fq1a:"支持绝大多数可编辑文本区域，例如邮件、文档、聊天工具和笔记应用。",fq2q:"免费版有限制吗？",fq2a:"免费版提供每日额度和核心功能，适合完整体验真实工作流。",fq3q:"是否支持自定义模型？",fq3a:"支持。你可以在 Pro 版中接入任意 OpenAI-compatible 服务商。",fq4q:"数据会上传到哪里？",fq4a:"配置和密钥保存在本地，仅在你手动触发时向目标模型发送请求。",supl:"支持",suph:"需要帮助？<em>联系我们</em>",supb:"如果你遇到 bug、购买问题或功能建议，欢迎直接发邮件，我们会尽快回复。",supmailt:"支持邮箱",supmaild:"工作日 24 小时内回复",ll:"法律文件",lh:"协议与<em>审核资料</em>",lb:"以下文件用于 App Store 审核与用户查阅，提供中英文版本。",lt1:"隐私协议",ls1:"Privacy Policy · 中英双语",lt2:"服务条款",ls2:"Terms of Service · 中英双语",navFeat:"功能",navPrice:"价格",navFaq:"FAQ",navSup:"支持",navLegal:"法律"},
+badge:"macOS 菜单栏 · AI 写作助手",h1a:"选中文字，",h1b:"立刻变更好。",lead:"SnapRewrite 让改写、润色和翻译直接发生在你正在使用的应用里。不用切 Tab，不用复制粘贴——选中触发，结果秒回，一键落回原文。",cta1:"免费下载使用",cta2:"了解功能",s1:"应用体积",s2:"平均改写耗时",s3v:"一次性",s3:"Pro 解锁",tt:"SnapRewrite · 运行日志",tg1:"[检测]",tv1:"选中文本已捕获",tg2:"[动作]",tv2:"改写语气 · 专业风格",tg3:"[输出]",tv3:"2.1 秒完成 ✓",tg4:"[应用]",tv4:"原位替换完成",lbef:"改写前",tbef:"this report has some issues and we need fix it asap",laft:"改写后",taft:"本报告存在若干关键问题，需立即处理。",tag1:"改写润色",tag2:"中英翻译",tag3:"语法修复",tag4:"自定义命令",tag5:"多模型接入",sh:"向下探索",fl:"使用流程",fh:"3 秒完成一次<br/><em>高质量改写</em>",fb:"把复制粘贴等待再替换这 7 步变成 1 步。选中触发，结果直接落回原文，完全不打断你的工作节奏。",s1h:"选中文本",s1p:"在任意 macOS 应用里选中你想处理的文字。邮件、Slack、Notion、文档……都行。",s2h:"触发命令",s2p:"拖选后触发、双击触发、或使用自定义快捷键。三种方式，匹配不同习惯。",s3h:"生成结果",s3p:"选择写作风格或自定义命令，AI 结果秒回。切换风格即刻重新生成。",s4h:"一键应用",s4p:"点击 Apply，改写结果直接替换原文。继续你手头的工作，不换窗口。",kl:"核心功能",kh:"让 AI 写作<br/><em>真正贴合你的场景</em>",kb:"从邮件沟通到产品文档，从中英切换到语气调整，SnapRewrite 提供的是低摩擦效率体验，而不是额外学习成本。",f1h:"快捷触发",f1p:"拖选、双击、快捷键三种触发方式，完全匹配你的操作习惯。",f2h:"多模型接入",f2p:"内置国产免费模型，支持 OpenAI-compatible 接口，BYOK 自由选择。",f3h:"自定义命令",f3p:"将重复写作任务封装为可复用动作，打造专属写作工作流。",f4h:"输出语言控制",f4p:"明确指定输出语言，避免中英混杂，内置语言校验与重试。",f5h:"隐私本地优先",f5p:"配置与 API Key 保存在本机，仅在你触发时才向模型发起请求。",f6h:"外观可定制",f6p:"工具栏、弹窗、Settings 三处主题色独立配置，越用越顺手。",pl:"定价",ph:"先体验，<em>再决定。</em>",pb0:"免费",pn0:"永久免费，无需信用卡",pd0:"内置国产免费模型，免翻墙开箱即用。体验完整改写流程，确认真实需求再决定是否升级。",pi1:"内置免费模型 + 每日额度",pi2:"改写 / 润色 / 翻译核心功能",pi3:"自定义命令（最多 2 条）",pi4:"三种触发方式",pb0btn:"免费开始使用",pnow:"¥18",porig:"原价 ¥68",pdisc:"限时 74% OFF",pn1:"一次性买断 · 无订阅",pd1:"接入自己的模型与 API，解锁无限自定义命令，打造真正属于你的写作工作流。",pp1:"全部免费功能",pp2:"BYOK：接入任意 OpenAI-compatible 模型",pp3:"自定义命令不限数量",pp4:"HTTP / HTTPS 代理支持",pp5:"Apple 内购 · 可恢复购买",pp0btn:"解锁 Pro →",faql:"FAQ",faqh:"常见问题与<em>快速解答</em>",fq1q:"支持哪些应用？",fq1a:"支持绝大多数可编辑文本区域，例如邮件、文档、聊天工具和笔记应用。",fq2q:"免费版有限制吗？",fq2a:"免费版提供每日额度和核心功能，适合完整体验真实工作流。",fq3q:"是否支持自定义模型？",fq3a:"支持。当前可选模型包括：智谱（glm-4-flash）、OpenAI（gpt-4.1）、Groq（llama-3.3-70b-versatile）、Gemini（gemini-3-flash-preview）。",fq4q:"数据会上传到哪里？",fq4a:"配置和密钥保存在本地，仅在你手动触发时向目标模型发送请求。",supl:"支持",suph:"需要帮助？<em>联系我们</em>",supb:"如果你遇到 bug、购买问题或功能建议，欢迎直接发邮件，我们会尽快回复。",supmailt:"支持邮箱",supmaild:"工作日 24 小时内回复",ll:"法律文件",lh:"协议与<em>审核资料</em>",lb:"以下文件用于 App Store 审核与用户查阅，提供中英文版本。",lt1:"隐私协议",ls1:"Privacy Policy · 中英双语",lt2:"服务条款",ls2:"Terms of Service · 中英双语",navFeat:"功能介绍",navFlow:"使用流程",navPrice:"价格",navFaq:"FAQ",navSup:"支持",navLegal:"法律"},
 en:{
-badge:"macOS Menu Bar · AI Writing Assistant",h1a:"Select text.",h1b:"Instantly better.",lead:"SnapRewrite rewrites, polishes, and translates directly inside any app you're using. No tab switching, no copy-paste loops - trigger, get results, apply in one click.",cta1:"Download Free",cta2:"Explore Features",s1:"App size",s2:"Avg rewrite time",s3v:"One-time",s3:"Pro unlock",tt:"SnapRewrite · Terminal Log",tg1:"[detect]",tv1:"Selection captured",tg2:"[action]",tv2:"Improve Writing · Professional",tg3:"[output]",tv3:"Rewritten in 2.1s ✓",tg4:"[apply]",tv4:"In-place replacement done",lbef:"BEFORE",tbef:"this report has some issues and we need fix it asap",laft:"AFTER",taft:"This report contains several critical issues that require immediate attention.",tag1:"Rewrite",tag2:"Translate",tag3:"Grammar Fix",tag4:"Custom Commands",tag5:"Multi-Model",sh:"Scroll to explore",fl:"How It Works",fh:"A quality rewrite<br/>in <em>~3 seconds</em>",fb:"Turn the 7-step copy-paste-wait-paste-replace loop into a single action. Trigger, get results, apply in-place - without breaking your flow.",s1h:"Select Text",s1p:"Highlight any text in any macOS app. Email, Slack, Notion, docs - all supported.",s2h:"Trigger",s2p:"Use drag-select, double-click, or your custom hotkey. Three modes for different habits.",s3h:"Generate",s3p:"Choose a writing style or custom command. AI output arrives instantly. Switch styles to regenerate immediately.",s4h:"Apply",s4p:"Click Apply to replace the original text. Continue your work - no window switch needed.",kl:"Core Features",kh:"AI writing built<br/>for <em>real workflows</em>",kb:"From emails to product docs, from bilingual polish to tone control - SnapRewrite means lower friction, not a new learning curve.",f1h:"Fast Triggers",f1p:"Drag-select, double-click, or hotkey - three trigger modes for any writing habit.",f2h:"Multi-Model Access",f2p:"Built-in free model plus any OpenAI-compatible endpoint. BYOK, your choice.",f3h:"Custom Commands",f3p:"Package repetitive writing tasks into reusable actions and build your own workflow.",f4h:"Language Control",f4p:"Force target language output. Built-in language validation prevents mixed results.",f5h:"Privacy First",f5p:"Config and API keys stored locally. Requests only sent when you trigger an action.",f6h:"Appearance",f6p:"Customize toolbar, popup, and Settings theme colors independently.",pl:"Pricing",ph:"Try first, <em>decide later.</em>",pb0:"Free",pn0:"Forever free, no credit card",pd0:"Built-in free model works out of the box - no VPN needed. Experience the full rewrite flow before deciding to upgrade.",pi1:"Built-in free model + daily quota",pi2:"Rewrite / Polish / Translate",pi3:"Custom commands (up to 2)",pi4:"All 3 trigger modes",pb0btn:"Start for Free",pnow:"$5.99",porig:"Was $19",pdisc:"Limited 68% OFF",pn1:"One-time purchase · No subscription",pd1:"Connect your own models and APIs. Unlimited custom commands. Build your personal writing command system.",pp1:"Everything in Free",pp2:"BYOK: any OpenAI-compatible model",pp3:"Unlimited custom commands",pp4:"HTTP / HTTPS proxy support",pp5:"Apple in-app purchase · Restore available",pp0btn:"Unlock Pro →",faql:"FAQ",faqh:"Common Questions &amp; <em>Quick Answers</em>",fq1q:"Which apps are supported?",fq1a:"Most editable text fields are supported, including email, docs, chat apps, and note tools.",fq2q:"Is Free version limited?",fq2a:"Free includes daily quota and core features, enough to run the complete workflow.",fq3q:"Can I connect my own model?",fq3a:"Yes. Pro supports any OpenAI-compatible provider with your own API key.",fq4q:"Where does my data go?",fq4a:"Config and keys are stored locally. Requests are only sent when you trigger an action.",supl:"Support",suph:"Need help? <em>Contact us</em>",supb:"If you hit a bug, purchase issue, or have a feature request, email us and we will reply soon.",supmailt:"Support Email",supmaild:"Reply within 24h on business days",ll:"Legal",lh:"Legal &amp; <em>Review Documents</em>",lb:"These documents are available for App Store review and public user access in both languages.",lt1:"Privacy Policy",ls1:"Chinese &amp; English available",lt2:"Terms of Service",ls2:"Chinese &amp; English available",navFeat:"Features",navPrice:"Pricing",navFaq:"FAQ",navSup:"Support",navLegal:"Legal"}
+badge:"macOS Menu Bar · AI Writing Assistant",h1a:"Select text.",h1b:"Instantly better.",lead:"SnapRewrite rewrites, polishes, and translates directly inside any app you're using. No tab switching, no copy-paste loops - trigger, get results, apply in one click.",cta1:"Download Free",cta2:"Explore Features",s1:"App size",s2:"Avg rewrite time",s3v:"One-time",s3:"Pro unlock",tt:"SnapRewrite · Terminal Log",tg1:"[detect]",tv1:"Selection captured",tg2:"[action]",tv2:"Improve Writing · Professional",tg3:"[output]",tv3:"Rewritten in 2.1s ✓",tg4:"[apply]",tv4:"In-place replacement done",lbef:"BEFORE",tbef:"this report has some issues and we need fix it asap",laft:"AFTER",taft:"This report contains several critical issues that require immediate attention.",tag1:"Rewrite",tag2:"Translate",tag3:"Grammar Fix",tag4:"Custom Commands",tag5:"Multi-Model",sh:"Scroll to explore",fl:"How It Works",fh:"A quality rewrite<br/>in <em>~3 seconds</em>",fb:"Turn the 7-step copy-paste-wait-paste-replace loop into a single action. Trigger, get results, apply in-place - without breaking your flow.",s1h:"Select Text",s1p:"Highlight any text in any macOS app. Email, Slack, Notion, docs - all supported.",s2h:"Trigger",s2p:"Use drag-select, double-click, or your custom hotkey. Three modes for different habits.",s3h:"Generate",s3p:"Choose a writing style or custom command. AI output arrives instantly. Switch styles to regenerate immediately.",s4h:"Apply",s4p:"Click Apply to replace the original text. Continue your work - no window switch needed.",kl:"Core Features",kh:"AI writing built<br/>for <em>real workflows</em>",kb:"From emails to product docs, from bilingual polish to tone control - SnapRewrite means lower friction, not a new learning curve.",f1h:"Fast Triggers",f1p:"Drag-select, double-click, or hotkey - three trigger modes for any writing habit.",f2h:"Multi-Model Access",f2p:"Built-in free model plus any OpenAI-compatible endpoint. BYOK, your choice.",f3h:"Custom Commands",f3p:"Package repetitive writing tasks into reusable actions and build your own workflow.",f4h:"Language Control",f4p:"Force target language output. Built-in language validation prevents mixed results.",f5h:"Privacy First",f5p:"Config and API keys stored locally. Requests only sent when you trigger an action.",f6h:"Appearance",f6p:"Customize toolbar, popup, and Settings theme colors independently.",pl:"Pricing",ph:"Try first, <em>decide later.</em>",pb0:"Free",pn0:"Forever free, no credit card",pd0:"Built-in free model works out of the box - no VPN needed. Experience the full rewrite flow before deciding to upgrade.",pi1:"Built-in free model + daily quota",pi2:"Rewrite / Polish / Translate",pi3:"Custom commands (up to 2)",pi4:"All 3 trigger modes",pb0btn:"Start for Free",pnow:"$5.99",porig:"Was $19",pdisc:"Limited 68% OFF",pn1:"One-time purchase · No subscription",pd1:"Connect your own models and APIs. Unlimited custom commands. Build your personal writing command system.",pp1:"Everything in Free",pp2:"BYOK: any OpenAI-compatible model",pp3:"Unlimited custom commands",pp4:"HTTP / HTTPS proxy support",pp5:"Apple in-app purchase · Restore available",pp0btn:"Unlock Pro →",faql:"FAQ",faqh:"Common Questions &amp; <em>Quick Answers</em>",fq1q:"Which apps are supported?",fq1a:"Most editable text fields are supported, including email, docs, chat apps, and note tools.",fq2q:"Is Free version limited?",fq2a:"Free includes daily quota and core features, enough to run the complete workflow.",fq3q:"Can I connect my own model?",fq3a:"Yes. Current options include Zhipu (glm-4-flash), OpenAI (gpt-4.1), Groq (llama-3.3-70b-versatile), and Gemini (gemini-3-flash-preview).",fq4q:"Where does my data go?",fq4a:"Config and keys are stored locally. Requests are only sent when you trigger an action.",supl:"Support",suph:"Need help? <em>Contact us</em>",supb:"If you hit a bug, purchase issue, or have a feature request, email us and we will reply soon.",supmailt:"Support Email",supmaild:"Reply within 24h on business days",ll:"Legal",lh:"Legal &amp; <em>Review Documents</em>",lb:"These documents are available for App Store review and public user access in both languages.",lt1:"Privacy Policy",ls1:"Chinese &amp; English available",lt2:"Terms of Service",ls2:"Chinese &amp; English available",navFeat:"Features",navFlow:"Flow",navPrice:"Pricing",navFaq:"FAQ",navSup:"Support",navLegal:"Legal"}
 };
 
 var featureKey='rewrite';
@@ -415,7 +469,10 @@ function setFeatureImage(lang,key){
 function go(lang){
   var d=D[lang];
   document.documentElement.lang=lang==='zh'?'zh-CN':'en';
-  try{localStorage.setItem('sr.lang',lang);}catch(e){}
+  try{
+    localStorage.setItem('sr.lang',lang);
+    localStorage.setItem('snaprewrite.site.lang',lang);
+  }catch(e){}
   document.querySelectorAll('[data-k]').forEach(function(el){
     var k=el.getAttribute('data-k');
     if(d[k]!==undefined)el.innerHTML=d[k];
